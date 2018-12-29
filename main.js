@@ -28,8 +28,8 @@ if (process.platform === 'win32') {
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1024,
-    height: 768,
+    width: 1200,
+    height: 900,
     show: false
   });
 
@@ -60,7 +60,7 @@ function createWindow() {
 
     // Open the DevTools automatically if developing
     if (dev) {
-      // mainWindow.webContents.openDevTools();
+      mainWindow.webContents.openDevTools();
     }
   });
 

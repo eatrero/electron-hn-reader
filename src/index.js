@@ -1,31 +1,31 @@
+import regeneratorRuntime from 'regenerator-runtime';
 import React from 'react';
 import { render } from 'react-dom';
-import styled from 'styled-components';
+import App from './app';
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
-// Create main App component
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Title>Hello, this is your first Electron app!</Title>
+const getTopStories = async () => {
+  return fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
+    .then(response => {
+      return response.json();
+    })
+    .then(posts => {
+      return posts.slice(1, 100);
+    });
+};
 
-        <p>I hope you enjoy using this electron react app. Woot</p>
-      </div>
-    );
-  }
-}
+const getItem = async id => {
+  return await fetch(
+    `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+  ).then(response => response.json());
+};
 
-// Create your own root div in the body element before rendering into it
-let root = document.createElement('div');
+const getItems = async ids => {
+  return await Promise.all(ids.map(id => getItem(id)));
+};
 
-// Add id 'root' and append the div to body element
-root.id = 'root';
-document.body.appendChild(root);
+let items;
+const storyIds = getTopStories().then(async ids => {
+  items = await getItems(ids);
 
-// Render the application into the DOM, the div inside index.html
-render(<App />, document.getElementById('root'));
+  render(<App items={items} />, document.getElementById('app'));
+});
