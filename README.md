@@ -3,8 +3,7 @@
 ## YAHNR
 An Electron app showing top 50 best stories from [Hacker News] (https://news.ycombinator.com/)
 
-![hn-reader](![screen shot 2018-12-31 at 2 22 55 pm](https://user-images.githubusercontent.com/728615/50568499-a4a94680-0d07-11e9-82b2-f0b24cb6bebd.png)
-)
+![hn-reader](https://user-images.githubusercontent.com/728615/50568499-a4a94680-0d07-11e9-82b2-f0b24cb6bebd.png)
 
 ## Stack
 [electron 4](https://electronjs.org/)
