@@ -9,15 +9,6 @@ const AppWrapper = styled.div`
   display: flex;
 `;
 
-const sortItems = (a, b) => {
-  if (b.score > a.score) {
-    return 1;
-  } else if (a.score > b.score) {
-    return -1;
-  }
-  return 0;
-};
-
 function App() {
   const [items, setItems] = useState([]);
   const [currentPost, setCurrentPost] = useState({});
@@ -30,7 +21,7 @@ function App() {
 
   const onClickRefresh = async () => {
     const items = await getTopStories();
-    const sortedItems = items.sort(sortItems).slice(1, 30);
+    const sortedItems = items.slice(1, 50);
     setItems(sortedItems);
     if (!currentPost.id) {
       setCurrentPost(sortedItems[0]);

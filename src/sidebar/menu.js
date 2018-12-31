@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Refresh } from '@material-ui/icons';
-
-const Hamburger = styled.span`
-  transition: transform 0.3s ease-in-out;
-  transform: ${props => (props.isDrawerOpen ? 'scale(0.5)' : 'scale(0.6)')};
-`;
+import Hamburger from './hamburger';
 
 const Line = styled.span`
   width: 40px;
@@ -20,28 +16,23 @@ const MenuWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 20px 0 0 5px;
+  -webkit-app-region: drag;
 `;
 
 const StyledRefresh = styled(Refresh)`
   color: rgb(140, 140, 140);
+  padding-left: 40px;
+  -webkit-app-region: no-drag;
 `;
 
-const Menu = ({ isDrawerOpen, onClickRefresh }) => (
+const Menu = ({ open, onClickRefresh, onClickHamburger }) => (
   <MenuWrapper>
-    <Hamburger isDrawerOpen={isDrawerOpen}>
-      <Line
-        css={{
-          transform: isDrawerOpen ? 'translateX(-10px) rotate(-45deg)' : 'none'
-        }}
-      />
-      <Line />
-      <Line
-        css={{
-          transform: isDrawerOpen ? 'translateX(-10px) rotate(45deg)' : 'none'
-        }}
-      />
-    </Hamburger>
-    <StyledRefresh fontSize="large" onClick={() => onClickRefresh()} />
+    <Hamburger open={open} onClickHamburger={onClickHamburger} fill="#8c8c8c" />
+    {open && (
+      <StyledRefresh fontSize="large" onClick={() => onClickRefresh()} />
+    )}
   </MenuWrapper>
 );
 

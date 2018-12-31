@@ -1,6 +1,6 @@
 import regeneratorRuntime from 'regenerator-runtime';
 export const getTopStories = async () => {
-  return fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
+  return fetch('https://hacker-news.firebaseio.com/v0/beststories.json')
     .then(response => {
       return response.json();
     })

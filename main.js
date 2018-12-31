@@ -30,6 +30,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 900,
+    titleBarStyle: 'hidden',
     show: false
   });
 
