@@ -1,9 +1,10 @@
-# HN Reader Electron App
+# Hacker News Reader Electron App
 
 ## YAHNR
-I usually browse HN once every few days, so I often miss out on a popular post from the previous day. I wanted the ability to sort the most recent top posts by upvotes. This was the perfect excuse I needed to mess around with Electron and React hooks.
+An Electron app showing top 50 best stories from [Hacker News] (https://news.ycombinator.com/)
 
-![hn-reader](https://user-images.githubusercontent.com/728615/50541105-3b80d200-0b53-11e9-931a-af4325942073.png)
+![hn-reader](![screen shot 2018-12-31 at 2 22 55 pm](https://user-images.githubusercontent.com/728615/50568499-a4a94680-0d07-11e9-82b2-f0b24cb6bebd.png)
+)
 
 ## Stack
 [electron 4](https://electronjs.org/)
