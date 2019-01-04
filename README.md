@@ -1,7 +1,7 @@
 # Hacker News Reader Electron App
 
 ## YAHNR
-An Electron app showing top 50 best stories from [Hacker News] (https://news.ycombinator.com/)
+An Electron app showing top 50 best stories from [Hacker News](https://news.ycombinator.com/)
 
 ![hn-reader](https://user-images.githubusercontent.com/728615/50568499-a4a94680-0d07-11e9-82b2-f0b24cb6bebd.png)
 
